@@ -1,14 +1,20 @@
 package expensereport;
 
-public class Expense {
+public abstract class Expense {
 
-    public enum Type {DINNER, BREAKFAST, CAR_RENTAL}
+    private int amount;
 
-    public Type type;
-    public int amount;
-
-    public Expense(Type type, int amount) {
-        this.type = type;
+    public Expense(int amount) {
         this.amount = amount;
     }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public abstract boolean isMeal();
+
+    public abstract String getExpenseName();
+
+    public abstract boolean isOverage();
 }
